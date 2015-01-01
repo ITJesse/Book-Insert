@@ -19,6 +19,9 @@ namespace ToolsLibrary
         [DllImport("kernel32")]
         private static extern int GetPrivateProfileString(string section, string key, string def, StringBuilder retVal, int size, string filePath);
 
+        [DllImport("kernel32")]
+        public static extern uint GetLastError();
+
         //类的构造函数，传递INI文件的路径和文件名
         public IniFile(string INIPath)
         {
@@ -26,9 +29,10 @@ namespace ToolsLibrary
         }
 
         //写INI文件
-        public void IniWriteValue(string Section, string Key, string Value)
+        public uint IniWriteValue(string Section, string Key, string Value)
         {
             WritePrivateProfileString(Section, Key, Value, path);
+            return GetLastError();
         }
 
         //读取INI文件 

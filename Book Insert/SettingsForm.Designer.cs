@@ -74,7 +74,6 @@
             this.label1.Size = new System.Drawing.Size(78, 21);
             this.label1.TabIndex = 3;
             this.label1.Text = "RFID串口";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -128,6 +127,7 @@
             this.btnCancleSetting.TabIndex = 9;
             this.btnCancleSetting.Text = "取消";
             this.btnCancleSetting.UseVisualStyleBackColor = true;
+            this.btnCancleSetting.Click += new System.EventHandler(this.btnCancleSetting_Click);
             // 
             // SettingsForm
             // 
